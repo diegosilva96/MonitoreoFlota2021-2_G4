@@ -26,6 +26,10 @@ public class Mapa implements IMapa {
     private double coordenadaYInicial;
     private double coordenadaXActual;
     private double coordenadaYActual;
+    private String nombreMapa;
+    private String creadorMapa;
+   
+     
 
     private RegistroLog registro = RegistroLog.getInstance();
 
@@ -34,7 +38,8 @@ public class Mapa implements IMapa {
         // create a MapView to display the map and add it to the stack pane
         mapView = new MapView();
         idVentana++;
-
+        this.nombreMapa="Mapa 2";
+        this.creadorMapa="Diego Silva";
         // create an ArcGISMap with the default imagery basemap
         final ArcGISMap map = new ArcGISMap(Basemap.createImagery());
 
@@ -126,6 +131,9 @@ public class Mapa implements IMapa {
         m.coordenadaYInicial = this.coordenadaYInicial;
         m.coordenadaXActual = this.coordenadaXActual;
         m.coordenadaYActual = this.coordenadaYActual;
+        m.nombreMapa = this.nombreMapa;
+        m.creadorMapa = this.creadorMapa;
+
         return m;
     }
 

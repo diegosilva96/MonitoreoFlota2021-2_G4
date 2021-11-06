@@ -89,6 +89,15 @@ public class Ventana extends Application {
         mapaBase2.imprimeCoordenadasActual();
         stackPane.getChildren().add(mapaBase2.getMapView());
 
+        PuntoMonitoreoBuilder puntoBuilder = new PuntoMonitoreoBuilder("Segundo punto");
+        puntoBuilder.withSimbolo(SimpleMarkerSymbol.Style.CIRCLE, 0xFFFF0000, 10);
+        puntoBuilder.withUbicacion(-12.054901, -77.085470);
+        Punto puntoInicial = puntoBuilder.build();
+
+        GraphicsOverlay graphicsOverlay = new GraphicsOverlay();
+        graphicsOverlay.getGraphics().add(puntoInicial.getPunto());
+        mapaBase2.getMapView().getGraphicsOverlays().add(graphicsOverlay);
+
         stage.show();
     }
 
