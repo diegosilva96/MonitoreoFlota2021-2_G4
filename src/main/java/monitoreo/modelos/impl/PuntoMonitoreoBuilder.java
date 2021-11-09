@@ -12,6 +12,8 @@ public class PuntoMonitoreoBuilder implements IPuntoMonitoreo {
     private SimpleMarkerSymbol.Style estilo;
     private int color;
     private int tamano;
+    private String nombrerepartidor;
+    private String placaVehiculo;
 
     public PuntoMonitoreoBuilder(String tipoPunto)  {
         this.tipoPunto = tipoPunto;
@@ -29,6 +31,11 @@ public class PuntoMonitoreoBuilder implements IPuntoMonitoreo {
         this.longitud = longitud;
         return this;
     }
+    public PuntoMonitoreoBuilder withRepartidor(String nombre,String placa){
+        this.nombrerepartidor=nombre;
+        this.placaVehiculo=placa;
+        return this;
+    }
 
     @Override
     public Punto build() {
@@ -40,6 +47,8 @@ public class PuntoMonitoreoBuilder implements IPuntoMonitoreo {
         punto.setLatitud(this.latitud);
         punto.setLongitud(this.longitud);
         punto.setTamano(this.tamano);
+        punto.setnombreRepartidor(this.nombrerepartidor);
+        punto.setplacaVehiculo(this.placaVehiculo);
         punto.generaPunto();
         return punto;
     }
