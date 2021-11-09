@@ -20,6 +20,8 @@ public class Punto implements IGrafico {
     private SimpleMarkerSymbol.Style estilo;
     private int color;
     private int tamano;
+    private String nombreRepartidor;
+    private String placaVehiculo;
 
     public Punto() {
     }
@@ -35,6 +37,20 @@ public class Punto implements IGrafico {
 
     public void setTamano(int tamano) {
         this.tamano = tamano;
+    }
+     public String getnombreRepartidor() {
+        return nombreRepartidor;
+    }
+
+    public void setnombreRepartidor(String nombreRepartidor) {
+        this.nombreRepartidor = nombreRepartidor;
+    }
+    public String getplacaVehiculo() {
+        return placaVehiculo;
+    }
+
+    public void setplacaVehiculo(String placaVehiculo) {
+        this.placaVehiculo = placaVehiculo;
     }
 
     public SimpleMarkerSymbol.Style getEstilo() {
