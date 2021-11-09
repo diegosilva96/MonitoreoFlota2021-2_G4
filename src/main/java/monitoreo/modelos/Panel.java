@@ -1,8 +1,9 @@
 package monitoreo.modelos;
 
 import javafx.stage.Stage;
+import monitoreo.modelos.interfaces.IPanel;
 
-public class Panel implements Cloneable {
+public class Panel implements IPanel{
     private double ancho;
     private double alto;
     private String titulo;
@@ -45,13 +46,12 @@ public class Panel implements Cloneable {
         return stage;
     }
 
-    public Panel clone() {
-        try {
-            return (Panel) super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-            return null;
-        }
+    public Panel clonar() {
+        Panel p=new Panel();
+        p.alto=this.alto;
+        p.ancho=this.ancho;
+        p.titulo=this.titulo;
+        return p;
 
     }
 

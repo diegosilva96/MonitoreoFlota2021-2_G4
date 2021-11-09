@@ -75,7 +75,7 @@ public class Ventana extends Application {
     }
 
     public void muestraNuevaVentana() {
-        Panel panelBase2= panelBase.clone();
+        Panel panelBase2= panelBase.clonar();
         Stage stage = panelBase2.getStage(); 
         StackPane stackPane = new StackPane();
         Scene scene = new Scene(stackPane);
